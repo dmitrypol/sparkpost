@@ -1,4 +1,5 @@
 require "sparkpost/version"
+require 'rest-client'
 
 module Sparkpost
   # Your code goes here...
