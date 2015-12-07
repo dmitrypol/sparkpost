@@ -4,7 +4,7 @@ module Sparkpost
   # Your code goes here...
   BASE_URL = "https://api.sparkpost.com/api/v1/"
 
-  def self.transmissions(api_key, name=nil, email, from, subject, html, text=nil)
+  def self.transmissions(api_key, name, email, from, subject, html, text)
 	api_url = "#{BASE_URL}#{__method__}"
 
 	params = {
