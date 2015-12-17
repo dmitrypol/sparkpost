@@ -7,18 +7,18 @@ module Sparkpost
 	  def initialize(api_key)
 	    @api_key = api_key
 	    @base_url = "https://api.sparkpost.com/api/v1/"
-	  end  
+	  end
 
 	  def transmissions(name, email, from, subject, html, text)
 			api_url = "#{@base_url}#{__method__}"
 
 			params = {
 				content: {
-					from: from, 
-					subject: subject, 
+					from: from,
+					subject: subject,
 					text: text,
 					html: html,
-					}, 
+					},
 				recipients: [
 					#{address: 'email1@gmail.com'},
 					#{address: {name: 'name', email: 'email1@gmail.com'}},

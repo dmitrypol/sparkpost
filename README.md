@@ -1,8 +1,6 @@
 # Sparkpost
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/sparkpost`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Simple Ruby gem to integrate with Sparkpost https://www.sparkpost.com/api#/reference API .  Currently only supports transmissions method at https://api.sparkpost.com/api/v1/
 
 ## Installation
 
@@ -22,7 +20,12 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Create regular ActionMailer like this:  mail(from: 'bar@foo.com, to: 'foo@bar.com', subject: 'test subject')
+
+@spark_client = Sparkpost::API.new( ENV.fetch("SPARKPOST_API_KEY") )
+@spark_client.send_message(mail)
+
+Returns hash like this:  {"results"=>{"total_rejected_recipients"=>0, "total_accepted_recipients"=>1, "id"=>"30170142054007646"}
 
 ## Development
 
@@ -32,5 +35,9 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/sparkpost.
+Bug reports and pull requests are welcome on GitHub at https://github.com/dmitrypol/sparkpost.
 
+## TODO
+Integrate with other methods
+Write tests
+Create controller endpoints to handle webhooks posts
